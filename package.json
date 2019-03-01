@@ -7,11 +7,12 @@
         "dev": "next ./src",
         "check": "eslint ./src/**/*{.js,.jsx}",
         "build": "next build ./src",
+        "clean": "rm -rf ./dist/",
         "start": "next start ./src",
-        "export": "next export && touch dist/.nojekyll",
-        "publish": "npm-run-all publish:*",
-        "publish:build": "npm-run-all build export",
-        "publish:push": "git add dist && git commit -m \"Deploy to github-pages\" && git push origin `git subtree split --prefix out build-branch`:github-pages --force"
+        "export": "next export ./src -o ./dist && touch dist/.nojekyll",
+        "publish": "npm-run-all publish:* clean",
+        "publish:build": "npm-run-all check build export",
+        "publish:push": "git add dist && git commit -m \"Deploy to github-pages\" && git subtree push --prefix dist origin gh-pages"
     },
     "repository": {
         "type": "git",
@@ -40,9 +41,7 @@
         "eslint-plugin-prettier": "^3.0.1",
         "eslint-plugin-react": "^7.12.4",
         "eslint-plugin-react-hooks": "^1.3.0",
-        "husky": "^1.3.1",
         "npm-run-all": "^4.1.5",
-        "prettier": "^1.16.4",
-        "pretty-quick": "^1.10.0"
+        "prettier": "^1.16.4"
     }
 }
