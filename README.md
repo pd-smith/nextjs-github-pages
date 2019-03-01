@@ -27,5 +27,6 @@ You can then visit your website at `{YOUR_GITHUB_USERNAME}.github.io/your-projec
 
 * Configurable base path for NextJS `Link` and `Router`
 * Add [stylelint](https://stylelint.io/) support
+* Find a better way to deal with accidental `dist` commits
 
 ## Have Fun!

@@ -12,7 +12,9 @@
         "export": "next export ./src -o ./dist && touch dist/.nojekyll",
         "publish": "npm-run-all publish:* clean",
         "publish:build": "npm-run-all check build export",
-        "publish:push": "git add dist && git commit -m \"Deploy to github-pages\" && git subtree push --prefix dist origin gh-pages"
+        "publish:stage": "git add dist",
+        "publish:commit": "git commit -m \"Deploy to github-pages\"",
+        "publish:push": "git push origin `git subtree split --prefix dist origin`:gh-pages --force"
     },
     "repository": {
         "type": "git",
