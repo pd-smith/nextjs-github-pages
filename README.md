@@ -23,4 +23,9 @@ Just run `npm run publish` and your static website will build and push to a `gh-
 
 You can then visit your website at `{YOUR_GITHUB_USERNAME}.github.io/your-project-name`
 
+## Remaining Items
+
+* Configurable base path for NextJS `Link` and `Router`
+* Add [stylelint](https://stylelint.io/) support
+
 ## Have Fun!
